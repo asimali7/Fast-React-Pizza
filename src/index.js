@@ -50,7 +50,6 @@ function App() {
   return (
     <div className="container">
       <Header />
-
       <Menu />
       <Footer />
     </div>
@@ -72,7 +71,7 @@ function Menu() {
       <h2>Our Menu</h2>
 
       {numPizza > 0 ? (
-        <React.Fragment>
+        <>
           <p>
             Authentic Italian cuisine. 6 creative dishes to choose from. All
             from our stone oven, all organic, all delicious.
@@ -82,7 +81,7 @@ function Menu() {
               <Pizza pizzaObj={pizza} key={pizza.name} />
             ))}
           </ul>
-        </React.Fragment>
+        </>
       ) : (
         <p>We're still working on our menu. Please Come back later :)</p>
       )}
@@ -119,7 +118,7 @@ function Pizza({ pizzaObj }) {
 
 function Footer() {
   const hour = new Date().getHours();
-  const openHour = 10;
+  const openHour = 12;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
 
@@ -149,7 +148,7 @@ function Order({ closeHour, openHour }) {
         We're open from {openHour}:00 to {closeHour}:00 come visit us or order
         online
       </p>
-      <button className="btn">Order</button>)
+      <button className="btn">Order</button>
     </div>
   );
 }
